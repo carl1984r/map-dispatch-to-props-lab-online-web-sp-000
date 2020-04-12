@@ -26,6 +26,14 @@ export class RestaurantInput extends Component {
     this.props.addRestaurant(this.state);
   }
 
+  const mapDispatchToProps = dispatch => {
+  return {
+    addRestaurant: (res) => {
+      dispatch(addRestaurant(res))
+    }
+  }
+}
+
   render() {
     return(
       <form onSubmit={(event) => this.handleOnSubmit(event)}>
